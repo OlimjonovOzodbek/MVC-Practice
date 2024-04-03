@@ -9,10 +9,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Shop.Domain.Entities;
 using System.Reflection;
+using Shop.Application;
 
 namespace Shop.Infrastructure.Persistance
 {
-    public class ShopDbContext : IdentityDbContext<User, Role, Guid>
+    public class ShopDbContext : IdentityDbContext<User, Role, Guid>,IApplicationDbContext
     {
         public ShopDbContext(DbContextOptions options)
             :base(options)
