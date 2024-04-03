@@ -5,3 +5,4 @@
 // postgres tortib oldim
 // infrastructureni ichiga persistance ochiladi (IDbContext turadi)
 // Configuration yozildi
+//Lazyload qoshildi, modellar ortasidagi connection uchun, DbContextni ichiga yozilar ekan
