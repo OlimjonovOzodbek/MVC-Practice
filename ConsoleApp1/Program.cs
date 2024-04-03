@@ -4,4 +4,4 @@
 // Guid berilishdidan maqsad user bilan role foreign key bolishi uchun!
 // postgres tortib oldim
 // infrastructureni ichiga persistance ochiladi (IDbContext turadi)
-//Configuration yozildi
+// Configuration yozildi
