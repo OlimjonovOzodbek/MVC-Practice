@@ -8,4 +8,5 @@
 //Lazyload qoshildi, modellar ortasidagi connection uchun, DbContextni ichiga yozilar ekan
 // Applicationi ichida use cases boladi u huddi servicega oxshidi uni ichida ikta papka boladi querry va command 
 //bo'ladi
-//application ichiga ediatr yuklanadi 11 chi versiyada
+// application ichiga ediatr yuklanadi 11 chi versiyada
+// Use case ichi toldiriladi, va program csga belgilaniladi.
