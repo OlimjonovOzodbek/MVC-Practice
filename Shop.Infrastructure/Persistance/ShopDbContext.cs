@@ -1,28 +1,31 @@
-﻿using Shop.Domain.Entities.Auth;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Shop.Application.Abstractions;
 using Shop.Domain.Entities;
+using Shop.Domain.Entities.Auth;
 using System.Reflection;
-using Shop.Application;
 
 namespace Shop.Infrastructure.Persistance
 {
-    public class ShopDbContext : IdentityDbContext<User, Role, Guid>,IApplicationDbContext
+    public class ShopDbContext : IdentityDbContext<User, Role, Guid>, IApplicationDbContext
     {
         public ShopDbContext(DbContextOptions options)
-            :base(options)
+            : base(options)
         {
             Database.Migrate();
         }
+
+        public DbSet<Product> Products { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        }
+
+        async ValueTask<int> IApplicationDbContext.SaveChangesAsync(CancellationToken cancellationToken)
+        {
+            int res = await SaveChangesAsync(cancellationToken);
+            return res; 
         }
     }
 }

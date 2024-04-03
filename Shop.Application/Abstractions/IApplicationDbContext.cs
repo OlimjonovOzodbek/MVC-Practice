@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shop.Application
+namespace Shop.Application.Abstractions
 {
     public interface IApplicationDbContext
     {
-        public DbSet<Product> Products {  get; set; }
-        ValueTask<Product> SaveChangesAsync(CancellationToken cancellationToken);
+        public DbSet<Product> Products { get; set; }
+        public ValueTask<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }
