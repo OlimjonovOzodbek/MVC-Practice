@@ -10,6 +10,7 @@ namespace Shop.MVC
 
             // Add services to the container.
             builder.Services.AddInfrastructure(builder.Configuration);
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();

@@ -1,13 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Shop.Application.Abstractions;
 using Shop.Infrastructure.Persistance;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shop.Infrastructure
 {
@@ -15,7 +10,7 @@ namespace Shop.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<ShopDbContext>(ops =>
+            services.AddDbContext<IApplicationDbContext,ShopDbContext>(ops =>
             ops
                 .UseLazyLoadingProxies()
                     .UseNpgsql(configuration.GetConnectionString("con")));
