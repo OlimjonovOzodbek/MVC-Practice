@@ -10,3 +10,4 @@
 //bo'ladi
 // application ichiga ediatr yuklanadi 11 chi versiyada
 // Use case ichi toldiriladi, va program csga belgilaniladi.
+//
