@@ -20,6 +20,14 @@ namespace Shop.Infrastructure.Configurations
             builder.Property(x => x.Type)
                 .IsRequired()
                 .HasMaxLength(10);
+
+            builder.HasData(new Product[]
+                {
+                    new Product { Id = 1,Name = "Moloko",Type = "achigan"},
+                    new Product { Id = 2,Name = "sut",Type = "bunisiyam"}
+
+            });
         }
+        
     }
 }

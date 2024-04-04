@@ -4,16 +4,16 @@ using Shop.Application.useCases.Products.Queries;
 
 namespace Shop.MVC.Controllers
 {
-    public class ProductController : Controller
+    public class ProductsController : Controller
     {
         private readonly IMediator _mediator;
-        public ProductController(IMediator mediator)
+        public ProductsController(IMediator mediator)
         {
             _mediator = mediator;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var res = _mediator.Send(new GetAllProductsQuery());
+            var res = await _mediator.Send(new GetAllProductsQuery());
             return View(res);
         }
     }

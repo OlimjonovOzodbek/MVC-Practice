@@ -1,0 +1,10 @@
+﻿@using Shop.Domain.Entities
+@model List<Product>
+
+@foreach(Product i in Model)
+{
+    <p>@i.Name</p>
+    <p>@i.Type</p>
+}
+
+<h1>HELLO WORLD!</h1>
