@@ -1,5 +1,7 @@
+using MediatR;
 using Shop.Infrastructure;
-
+using System.Reflection;
+using Shop.Application;
 namespace Shop.MVC
 {
     public class Program
@@ -10,6 +12,8 @@ namespace Shop.MVC
 
             // Add services to the container.
             builder.Services.AddInfrastructure(builder.Configuration);
+            
+            builder.Services.DependAdd();    //bu extension method parametriga this bilan kelish kerak,mediatrni qoshiqb ketadi
 
             builder.Services.AddControllersWithViews();
 
